@@ -1,113 +1,60 @@
 "use strict";
 
-// Menu functionality
-const menuBtn = document.querySelector(".menu__toggle--btn");
-const primaryNav = document.querySelector(".primary__nav--list");
-const navLinks = document.querySelectorAll(".primary__nav--item a");
+// Keep track of current slide (starting from 0)
+let activeSlide = 0;
 
-menuBtn.addEventListener("click", toggleMenu);
+// Function to show specific slide
+function showSlide(slideIndex) {
+  // Get all slides and dots
+  const slides = document.querySelectorAll(".slider__slide");
+  const dots = document.querySelectorAll(".slider__dot");
 
-function toggleMenu() {
-  const isVisible = primaryNav.getAttribute("data-visible") === "true";
-  primaryNav.setAttribute("data-visible", !isVisible);
-  menuBtn.setAttribute("aria-expanded", !isVisible);
-}
-
-// Close menu when clicking on nav links (mobile)
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth < 768) {
-      toggleMenu();
-    }
+  // Hide all slides
+  slides.forEach((slide) => {
+    slide.classList.remove("slider__slide--active");
   });
-});
 
-// Close menu when clicking outside (mobile)
-document.addEventListener("click", (e) => {
-  if (
-    window.innerWidth < 768 &&
-    !menuBtn.contains(e.target) &&
-    !primaryNav.contains(e.target) &&
-    primaryNav.getAttribute("data-visible") === "true"
-  ) {
-    toggleMenu();
+  // Remove active class from all dots
+  dots.forEach((dot) => {
+    dot.classList.remove("slider__dot--active");
+  });
+
+  // Show selected slide and activate corresponding dot
+  if (slides[slideIndex]) {
+    slides[slideIndex].classList.add("slider__slide--active");
+    activeSlide = slideIndex;
   }
-});
 
-// Carousel functionality
-const carouselContainer = document.querySelector(".carousel__container");
-const carouselItems = document.querySelectorAll(".carousel__item");
-const indicators = document.querySelectorAll(".indicator");
-
-let currentIndex = 0;
-let carouselInterval;
-
-function showSlide(index) {
-  // Update carousel position
-  carouselContainer.style.transform = `translateX(-${index * 100}%)`;
-
-  // Update indicators
-  indicators.forEach((indicator, i) => {
-    indicator.classList.toggle("active", i === index);
-  });
-
-  currentIndex = index;
-}
-
-function nextSlide() {
-  const nextIndex = (currentIndex + 1) % carouselItems.length;
-  showSlide(nextIndex);
-}
-
-function startCarousel() {
-  carouselInterval = setInterval(nextSlide, 4000);
-}
-
-function stopCarousel() {
-  clearInterval(carouselInterval);
-}
-
-// Initialize carousel
-showSlide(0);
-startCarousel();
-
-// Indicator click handlers
-indicators.forEach((indicator, index) => {
-  indicator.addEventListener("click", () => {
-    showSlide(index);
-    stopCarousel();
-    startCarousel(); // Restart the interval
-  });
-});
-
-// Pause carousel on hover
-const heroSection = document.querySelector(".hero__section");
-heroSection.addEventListener("mouseenter", stopCarousel);
-heroSection.addEventListener("mouseleave", startCarousel);
-
-// Header scroll effect
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY > 50;
-  header.setAttribute("data-scrolled", scrolled);
-});
-
-// Keyboard navigation for carousel
-document.addEventListener("keydown", (e) => {
-  if (document.activeElement.classList.contains("indicator")) {
-    if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      const prevIndex =
-        currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
-      showSlide(prevIndex);
-      stopCarousel();
-      startCarousel();
-    } else if (e.key === "ArrowRight") {
-      e.preventDefault();
-      nextSlide();
-      stopCarousel();
-      startCarousel();
-    }
+  // Activate dots for the current slide
+  const currentSlideElement = slides[slideIndex];
+  if (currentSlideElement) {
+    const currentSlideDots =
+      currentSlideElement.querySelectorAll(".slider__dot");
+    currentSlideDots.forEach((dot, index) => {
+      if (index === slideIndex) {
+        dot.classList.add("slider__dot--active");
+      }
+    });
   }
+}
+
+// Add event listeners when page loads
+document.addEventListener("DOMContentLoaded", function () {
+  const dots = document.querySelectorAll(".slider__dot");
+
+  // Add click event listener to each dot
+  dots.forEach((dot) => {
+    dot.addEventListener("click", function () {
+      const slideIndex = parseInt(this.getAttribute("data-slide"));
+      showSlide(slideIndex);
+    });
+  });
 });
+
+// Optional: Auto-slide every 5 seconds
+// Uncomment the lines below if you want automatic sliding
+
+setInterval(function () {
+  activeSlide = (activeSlide + 1) % 3;
+  showSlide(activeSlide);
+}, 5000);
