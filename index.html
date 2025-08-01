@@ -8,10 +8,94 @@
     <script defer src="src/js/main.js"></script>
   </head>
   <body>
+    <header class="header">
+      <div class="header__background">
+        <img
+          class="header__background-image"
+          id="backgroundImage"
+          src="src/assets/images/person-1.avif"
+          alt="Background"
+        />
+      </div>
+
+      <div class="header__content">
+        <div class="header__top">
+          <div class="header__logo">
+            <span>Roca</span>
+          </div>
+          <div class="header__counter">
+            <div class="header__counter-number" id="counterNumber">01</div>
+          </div>
+        </div>
+
+        <div class="header__hero">
+          <div class="header__hero-info">
+            <div class="header__hero-greeting">Hi, I' Am</div>
+            <h1 class="header__hero-name">Jonathan Doe</h1>
+            <div class="header__hero-title">
+              I am <span>Web Designer @ Company.com</span>
+            </div>
+
+            <nav class="header__social">
+              <a
+                href="https://facebook.com"
+                class="header__social-link header__social-link--facebook"
+                aria-label="Facebook"
+                ><img src="src/assets/images/facebook-svgrepo-com.svg" alt=""
+              /></a>
+              <a
+                href="https://twitter.com"
+                class="header__social-link header__social-link--twitter"
+                aria-label="Twitter"
+                ><img
+                  src="src/assets/images/twitter-154-svgrepo-com.svg"
+                  alt=""
+              /></a>
+              <a
+                href="https://google.com"
+                class="header__social-link header__social-link--google"
+                aria-label="Google"
+                ><img
+                  src="src/assets/images/google-logo-search-new-svgrepo-com.svg"
+                  alt=""
+              /></a>
+              <a
+                href="https://youtube.com"
+                class="header__social-link header__social-link--youtube"
+                aria-label="YouTube"
+                ><img
+                  src="src/assets/images/youtube-icon-logo-svgrepo-com.svg"
+                  alt=""
+              /></a>
+              <a
+                href="https://reddit.com"
+                class="header__social-link header__social-link--reddit"
+                aria-label="Reddit"
+                ><img src="src/assets/images/wifi-svgrepo-com.svg" alt=""
+              /></a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="header__bottom">
+          <div class="header__progress">
+            <div class="header__progress-label">
+              <span class="header__progress-percentage" id="progressPercentage"
+                >0%</span
+              >
+              <span>Satisfied Clients</span>
+            </div>
+            <div class="header__progress-bar">
+              <div class="header__progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <main>
       <!-- Contact Information Section -->
       <section class="about" aria-label="Contact Information">
-        <!-- Placeholder div (kept as per original comment) -->
         <div class="about-me" id="aboutSection">
           <div class="about-me__container">
             <!-- Left Section -->
@@ -30,7 +114,9 @@
 
             <!-- Center Section - Photo -->
             <div class="about-me__photo-section">
-              <div class="about-me__photo"></div>
+              <div class="about-me__photo">
+                <img src="src/assets/images/person-1.avif" alt="" />
+              </div>
             </div>
 
             <!-- Right Section - Skills -->
@@ -83,14 +169,26 @@
 
               <!-- !Social Links need to bring icons -->
               <div class="about-me__social">
-                <a href="#" class="about-me__social-link">f</a>
-                <a href="#" class="about-me__social-link">t</a>
+                <a href="#" class="about-me__social-link"
+                  ><img src="src/assets/images/facebook-svgrepo-com.svg" alt=""
+                /></a>
+                <a href="#" class="about-me__social-link"
+                  ><img
+                    src="src/assets/images/twitter-154-svgrepo-com.svg"
+                    alt=""
+                /></a>
                 <a
                   href="#"
                   class="about-me__social-link about-me__social-link--active"
-                  >in</a
-                >
-                <a href="#" class="about-me__social-link">ig</a>
+                  ><img
+                    src="src/assets/images/google-logo-search-new-svgrepo-com.svg"
+                    alt=""
+                /></a>
+                <a href="#" class="about-me__social-link"
+                  ><img
+                    src="src/assets/images/youtube-icon-logo-svgrepo-com.svg"
+                    alt=""
+                /></a>
               </div>
             </div>
           </div>
@@ -427,6 +525,199 @@
         </div>
       </section>
 
+      <section class="projects">
+        <h1 class="projects__title">Latest Projects</h1>
+
+        <div class="projects__container">
+          <!-- Navigation -->
+          <nav class="nav" role="navigation" aria-label="Project categories">
+            <button class="nav__button nav__button--active" data-category="all">
+              All
+            </button>
+            <button class="nav__button" data-category="work-ideas">
+              Work Ideas
+            </button>
+            <button class="nav__button" data-category="mockup">Mockup</button>
+            <button class="nav__button" data-category="psd-design">
+              PSD Design
+            </button>
+            <button class="nav__button" data-category="logo">Logo</button>
+            <button class="nav__button" data-category="presentation">
+              Presentation
+            </button>
+            <button class="nav__button" data-category="icons">Icons</button>
+          </nav>
+
+          <!-- Projects Grid -->
+          <div class="grid">
+            <!-- Project 1 - Work Ideas -->
+            <article class="card" data-category="work-ideas">
+              <div class="card__image">E-Commerce Platform</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">6 months ago</span>
+                <h2 class="card__title">E-Commerce Platform</h2>
+              </div>
+            </article>
+
+            <!-- Project 2 - Mockup -->
+            <article class="card" data-category="mockup">
+              <div class="card__image">3D Device Mockup</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">9 months ago</span>
+                <h2 class="card__title">3D Mockup Design</h2>
+              </div>
+            </article>
+
+            <!-- Project 3 - PSD Design -->
+            <article class="card" data-category="psd-design">
+              <div class="card__image">Website Template</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">4 months ago</span>
+                <h2 class="card__title">Modern Website Design</h2>
+              </div>
+            </article>
+
+            <!-- Project 4 - Logo -->
+            <article class="card" data-category="logo">
+              <div class="card__image">Brand Identity</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">2 months ago</span>
+                <h2 class="card__title">Creative Logo Design</h2>
+              </div>
+            </article>
+
+            <!-- Project 5 - Presentation -->
+            <article class="card" data-category="presentation">
+              <div class="card__image">Business Slides</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">8 months ago</span>
+                <h2 class="card__title">Business Presentation</h2>
+              </div>
+            </article>
+
+            <!-- Project 6 - Icons -->
+            <article class="card" data-category="icons">
+              <div class="card__image">Icon Set</div>
+              <div class="card__overlay">
+                <svg class="card__heart" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="card__date">1 month ago</span>
+                <h2 class="card__title">Custom Icon Pack</h2>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-articles">
+        <h2 class="latest-articles__title">Latest Articles</h2>
+
+        <ul class="latest-articles__list">
+          <!-- Article 1: Text left, Image right -->
+          <li class="article__tag">
+            <div class="article__content">
+              <span class="article__category">Design Tips</span>
+              <h3 class="article__title">Graphic Designer</h3>
+              <p class="article__description">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est dolor sit amet,
+                consectetur adipisicing elit sed do eiusmod tempor incididunt ut
+                labore Claritas est etiam processus dynamicus, qui sequitur
+                mutationem consuetudium lectorum. READ MORE
+              </p>
+            </div>
+            <div class="article__divider">
+              <span class="article__date">Jan 2024</span>
+            </div>
+            <div class="article__visual">
+              <svg class="article__svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+          </li>
+
+          <!-- Article 2: Image left, Text right -->
+          <li class="article__tag">
+            <div class="article__content">
+              <span class="article__category">App Development</span>
+              <h3 class="article__title">Application Design</h3>
+              <p class="article__description">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est dolor sit amet,
+                consectetur adipisicing elit sed do eiusmod tempor incididunt ut
+                labore Claritas est etiam processus dynamicus, qui sequitur
+                mutationem consuetudium lectorum. READ MORE
+              </p>
+            </div>
+            <div class="article__divider">
+              <span class="article__date">Feb 2024</span>
+            </div>
+            <div class="article__visual">
+              <svg class="article__svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+          </li>
+
+          <!-- Article 3: Text left, Image right -->
+          <li class="article__tag">
+            <div class="article__content">
+              <span class="article__category">Business Strategy</span>
+              <h3 class="article__title">Personal Adviser</h3>
+              <p class="article__description">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est dolor sit amet,
+                consectetur adipisicing elit sed do eiusmod tempor incididunt ut
+                labore Claritas est etiam processus dynamicus, qui sequitur
+                mutationem consuetudium lectorum. READ MORE
+              </p>
+            </div>
+            <div class="article__divider">
+              <span class="article__date">Mar 2024</span>
+            </div>
+            <div class="article__visual">
+              <svg class="article__svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       <!-- Partners Section -->
       <section class="partners__section" aria-label="Our Partners">
         <div class="partners__grid">
@@ -508,5 +799,96 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__contact">
+          <h2 class="footer__title">CONTACT US</h2>
+          <span class="footer__subtitle"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span
+          >
+
+          <form class="contact-form" id="contactForm">
+            <div class="contact-form__row">
+              <input
+                type="text"
+                name="name"
+                class="contact-form__input"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                class="contact-form__input"
+                placeholder="Your Email"
+                required
+              />
+              <input
+                type="url"
+                name="website"
+                class="contact-form__input"
+                placeholder="Your Website"
+              />
+            </div>
+            <textarea
+              name="message"
+              class="contact-form__textarea"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit" class="contact-form__button">
+              SEND MESSAGE
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__container">
+          <span class="footer__logo">roca</span>
+          <p class="footer__description">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam quis nostrud.
+          </p>
+          <div class="footer-social footer-social--links">
+            <a href="#" class="footer-social--link">
+              <img src="src/assets/images/facebook-svgrepo-com.svg" alt="" />
+            </a>
+            <a href="#" class="footer-social--link">
+              <img src="src/assets/images/twitter-154-svgrepo-com.svg" alt="" />
+            </a>
+            <a href="#" class="footer-social--link">
+              <img
+                src="src/assets/images/google-logo-search-new-svgrepo-com.svg"
+                alt=""
+              />
+            </a>
+            <a href="#" class="footer-social--link">
+              <img
+                src="src/assets/images/youtube-icon-logo-svgrepo-com.svg"
+                alt=""
+              />
+            </a>
+            <a href="#" class="footer-social--link">
+              <img src="src/assets/images/wifi-svgrepo-com.svg" alt="" />
+            </a>
+            <a href="#" class="footer-social--link">
+              <img src="src/assets/images/facebook-svgrepo-com.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <p class="modal__text">
+          Thank you for getting in touch! We appreciate you contacting us.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
