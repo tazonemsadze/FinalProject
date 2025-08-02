@@ -402,7 +402,6 @@ header {
   border-radius: 4px;
 }
 
-/* Social links */
 .about-me__social {
   display: flex;
   justify-content: flex-start;
@@ -425,11 +424,6 @@ header {
 .about-me__social-link:hover {
   transform: translateY(-3px);
 }
-
-/* .about-me__social-link--active {
-  background-color: #333;
-  color: white;
-} */
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -481,7 +475,6 @@ header {
   margin: 0 auto;
 }
 
-/* Individual Info Box */
 .info__box {
   display: flex;
   align-items: center;
@@ -489,7 +482,6 @@ header {
   flex: 1;
 }
 
-/* Icon Container */
 .info__svg {
   padding: var(--spacing-md);
   border-radius: 50%;
@@ -500,32 +492,27 @@ header {
   flex-shrink: 0; /* Prevents icon from shrinking */
 }
 
-/* Icon Hover Effect */
 .info__svg:hover {
   background-color: var(--clr-accent-pink);
   outline-color: transparent;
 }
 
-/* Icon Size Control */
 .info__svg img {
   width: 24px;
   height: 24px;
 }
 
-/* Contact Content */
 .info__content {
   display: grid;
   gap: var(--spacing-sm);
   color: var(--clr-white);
 }
 
-/* Contact Titles */
 .contact__info--title {
   font-size: var(--fs-regular);
   font-weight: 300;
 }
 
-/* Contact Details */
 .info__contact {
   font-family: var(--font-body);
   font-size: var(--fs-small);
@@ -534,7 +521,6 @@ header {
   gap: 0.3rem;
 }
 
-/* Link Hover Effects */
 .info__contact a:hover {
   color: var(--clr-accent-pink);
   transition: color var(--transition-fast);
