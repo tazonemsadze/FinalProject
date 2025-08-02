@@ -1,5 +1,5 @@
-@import url(/assets/fonts/fonts.css);
-@import url(/styles/reset.css);
+@import url(./src/assets/fonts/fonts.css);
+@import url(./src/styles/reset.css);
 
 /* CSS Custom Properties - Central color and typography management */
 :root {
