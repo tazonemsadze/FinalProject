@@ -1253,7 +1253,9 @@ header {
 
 .footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(./src/assets/images/footer-map.png) center/cover;
+  
+  background-image: url("../assets/images/footer-bg.jpg");
+
   color: white;
   padding-top: 60px;
   font-family: var(--font-glacial);
