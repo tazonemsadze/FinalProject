@@ -1,5 +1,5 @@
-@import url(/src/assets/fonts/fonts.css);
-@import url(/src/styles/reset.css);
+@import url(./src/assets/fonts/fonts.css);
+@import url(./src/styles/reset.css);
 
 /* CSS Custom Properties - Central color and typography management */
 :root {
@@ -1253,7 +1253,7 @@ header {
 
 .footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(/src/assets/images/footer-map.png) center/cover;
+    url(./src/assets/images/footer-map.png) center/cover;
   color: white;
   padding-top: 60px;
   font-family: var(--font-glacial);
